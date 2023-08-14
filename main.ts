@@ -1,6 +1,6 @@
 function 敵再描画 () {
     led.unplot(ex, ey)
-    敵移動()
+    敵移動2()
     led.plotBrightness(ex, ey, 42)
 }
 function 傾き調査 () {
@@ -8,6 +8,19 @@ function 傾き調査 () {
         右に進む()
     } else if (input.rotation(Rotation.Roll) < -30) {
         左に進む()
+    }
+}
+function 敵移動2 () {
+    if (Math.randomBoolean()) {
+        ex += 1
+        if (ex >= 5) {
+            ex = 4
+        }
+    } else {
+        ex += -1
+        if (ex < 0) {
+            ex = 0
+        }
     }
 }
 function 弾移動 () {
